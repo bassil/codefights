@@ -1,6 +1,5 @@
 def chessTeams(smarties, cleveries):
     """
-
     return the chess games in the order they will be played
     the ith member of team smarties will play against 
     the ith member of team cleveries in the ith game
