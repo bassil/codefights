@@ -17,8 +17,7 @@ def kthPermutation(numbers, k):
     >>> kthPermutation([1, 2], 1)
     [1, 2]
     """
-    gen = permutations(numbers)
-    return [next(gen) for _ in range(k)].last()
+    return list(list(permutations(numbers))[k-1])
 
 if __name__ == '__main__':
     import doctest
