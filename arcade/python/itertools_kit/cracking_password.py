@@ -1,7 +1,7 @@
-# from itertools import 
+from itertools import product
 
 def crackingPassword(digits, k, d):
-	"""return list of possible passwords
+	"""return list of possible passwords, sorted lexicographically
 
 	Args:
 
@@ -19,6 +19,7 @@ def crackingPassword(digits, k, d):
 	 '15',
 	 '21',
 	 '51']
+
 	>>> crackingPassword([4, 6, 0, 3], 4, 13)
 	['0000',
 	 '0364',
@@ -42,9 +43,7 @@ def crackingPassword(digits, k, d):
 	"""
 	def createNumber(digs):
 		return "".join(map(str, digs))
-
-	return 
-
+	return sorted([createNumber(_) for _ in product(digits, repeat=k) if int(createNumber(_)) % d == 0])
 if __name__ == '__main__':
 	import doctest
 	doctest.testmod(verbose=True,
